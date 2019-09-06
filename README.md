@@ -1,0 +1,2 @@
+# QAStrategyTemplete
+StrategyTemplete
