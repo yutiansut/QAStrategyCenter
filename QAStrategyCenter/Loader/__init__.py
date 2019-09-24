@@ -1,0 +1,1 @@
+from QAStrategyCenter.Loader.render import QAStrategyRender
