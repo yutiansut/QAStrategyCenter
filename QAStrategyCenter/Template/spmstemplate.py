@@ -19,6 +19,9 @@ class SPMS_Strategy(QA_SPMS):
         print(bar)
         print(self.market_data)
 
+auto_reload = True
+if_monitor = True
+
 
 p = SPMS_Strategy(
     QA_Position(
@@ -27,6 +30,6 @@ p = SPMS_Strategy(
         portfolio_cookie="{{portfolio_cookie}}",
         user_cookie="{{user_cookie}}",
         name="{{spms_name}}",
-        moneypreset={{init_cash}}),
-    auto_reload_data={{auto_reload}},
+        moneypreset=int("{{init_cash}}")),
+    auto_reload_data=({{auto_reload}}),
     if_monitor={{if_monitor}})
