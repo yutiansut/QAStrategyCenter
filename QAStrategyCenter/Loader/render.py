@@ -7,7 +7,7 @@ from jinja2 import Template
 from QAStrategyCenter.Loader.preset import backtest_preset
 
 
-def test_spms(user, password, account_cookie, spms, start, end, init_cash, frequence, ip, port, portfolio, source_code, args):
+def render(user, password, account_cookie, spms, start, end, init_cash, frequence, ip, port, portfolio, source_code, args):
     res = source_code + backtest_preset
     print(args)
     template = Template(res)
