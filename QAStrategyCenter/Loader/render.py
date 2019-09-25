@@ -7,7 +7,7 @@ from jinja2 import Template
 from QAStrategyCenter.Loader.preset import backtest_preset
 
 
-class QAStrategyRender():
+class QASPMSRender():
 
     def __init__(self, user: str = 'quantaxis', password: str = 'quantaxis', portfolio: str = 'default',
                  account_cookie: str = 'example_gen', spms: str = 'spms_gen',
@@ -77,5 +77,5 @@ class QAStrategyRender():
 
 
 if __name__ == "__main__":
-    for i in QAStrategyRender(source_code='{{a}}').render(a=[1, 2, 3], b=['x', 'y']):
+    for i in QASPMSRender(source_code='{{a}}').render(a=[1, 2, 3], b=['x', 'y']):
         print(i)

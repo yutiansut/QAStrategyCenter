@@ -1,2 +1,2 @@
 
-from QAStrategyCenter.Loader import QAStrategyRender
+from QAStrategyCenter.Loader import QASPMSRender
