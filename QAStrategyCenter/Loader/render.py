@@ -12,7 +12,7 @@ class QAStrategyRender():
     def __init__(self, user: str = 'quantaxis', password: str = 'quantaxis', portfolio: str = 'default',
                  account_cookie: str = 'example_gen', spms: str = 'spms_gen',
                  start: str = '2019-08-01', end: str = '2019-09-01', init_cash: int = 50000,
-                 frequence: str = '15min', ip: str = '127.0.0.1', port: int = 8010, source_code: str = 'text',):
+                 frequence: str = '15min', ip: str = '127.0.0.1', port: int = 8010, source_code: str = 'text', **kwargs):
         self.user = user
         self.password = password
         self.account_cookie = str(
@@ -31,6 +31,8 @@ class QAStrategyRender():
 
         self.source_code = source_code
 
+        self.kwargs = kwargs
+
     @property
     def template(self):
         print(self.source_code)
@@ -41,12 +43,20 @@ class QAStrategyRender():
     def fn(x):
         return reduce(lambda x, y: [str(i)+'*$*'+str(j) for i in x for j in y], x)
 
+    def load_parameter(self):
+        pass
+
+    def save_parameter(self):
+        pass
+
     def render(self,  **kwargs):
 
         res = {'username': self.user, 'password': self.password, 'SPMSNAME': self.spms, 'start': self.start,
                'account_cookie': self.account_cookie,
                'end': self.end, 'init_cash': self.init_cash,
                'frequence': self.frequence, 'portfolio': self.portfolio}
+
+        self.kwargs = kwargs
 
         for item in kwargs.keys():
             res[item] = kwargs[item]
