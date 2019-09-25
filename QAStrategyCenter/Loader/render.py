@@ -49,7 +49,7 @@ class QASPMSRender():
     def save_parameter(self):
         pass
 
-    def render(self,  **kwargs):
+    def render(self, conf=None, **kwargs):
 
         res = {'username': self.user, 'password': self.password, 'SPMSNAME': self.spms, 'start': self.start,
                'account_cookie': self.account_cookie,
@@ -57,7 +57,12 @@ class QASPMSRender():
                'frequence': self.frequence, 'portfolio': self.portfolio}
 
         self.kwargs = kwargs
+        if isinstance(conf, dict):
+            for item in conf.keys():
+                res[item] = conf[item]
 
+
+        print(kwargs)
         for item in kwargs.keys():
             res[item] = kwargs[item]
 
@@ -71,7 +76,7 @@ class QASPMSRender():
         print(resx)
 
         for item in resx:
-            print(item)
+
             content = self.template.render(item)
             yield content
 
