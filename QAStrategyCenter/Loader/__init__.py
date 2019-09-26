@@ -1,1 +1,2 @@
 from QAStrategyCenter.Loader.render import QASPMSRender
+from QAStrategyCenter.Loader.fileloader import load_from_file

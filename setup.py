@@ -62,6 +62,7 @@ setup(
                       'QACEPEngine', 'quantaxis_rank', 'quantaxis_pubsub'],
     entry_points={
         'console_scripts': [
+            'QASC_Loader = QAStrategyCenter.Loader.fileloader:load_from_file'
         ]
     },
     # install_requires=requirements,
